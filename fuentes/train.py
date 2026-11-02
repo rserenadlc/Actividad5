@@ -72,7 +72,7 @@ def evaluar_y_registrar(nombre_modelo, pipeline_base, param_grid):
         mlflow.sklearn.log_model(
             best_model, 
             artifact_path="model", 
-            skops_trusted_types=["numpy.dtype"]
+            serialization_format="cloudpickle"
         )
         
     print(f"Éxito: {nombre_modelo} registrado. Accuracy: {acc:.4f} | F1: {f1:.4f}")
