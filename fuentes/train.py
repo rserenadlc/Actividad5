@@ -63,7 +63,7 @@ def evaluar_y_registrar(model_name, grid_search, X_test, y_test, experiment_name
 
 def main():
     # 1. Cargar y Limpiar Datos
-    ruta_datos = "../datos/datos_ini/dataset_limpio.csv"
+    ruta_datos = "../datos/datos_limp/dataset_limpio.csv"
     if not os.path.exists(ruta_datos):
         print(f"Error: No se encontró el dataset en {ruta_datos}")
         return
