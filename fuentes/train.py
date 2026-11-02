@@ -62,8 +62,8 @@ def evaluar_y_registrar(nombre_modelo, modelo_grid, X_test, y_test):
     # Guarda el mejor modelo encontrado por GridSearchCV (best_estimator_)
     mlflow.sklearn.log_model(modelo_grid.best_estimator_, "model", skops_trusted_types=["numpy.dtype"])
 
-        print(f"\n--- {model_name} ---")
-        print(f"Accuracy: {acc:.4f} | Precision: {prec:.4f} | Recall: {rec:.4f} | F1: {f1:.4f} | ROC-AUC: {auc:.4f}")
+print(f"\n--- {model_name} ---")
+print(f"Accuracy: {acc:.4f} | Precision: {prec:.4f} | Recall: {rec:.4f} | F1: {f1:.4f} | ROC-AUC: {auc:.4f}")
 
 def main():
     # 1. Cargar y Limpiar Datos
