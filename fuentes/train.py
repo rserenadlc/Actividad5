@@ -55,9 +55,12 @@ def evaluar_y_registrar(model_name, grid_search, X_test, y_test, experiment_name
 
         # Registrar Artefacto e Imagen en MLflow
         mlflow.log_artifact(plot_path, artifact_path="graficas")
-        
-        # Registrar Modelo
-        mlflow.sklearn.log_model(pipe_lr, "model", skops_trusted_types=["numpy.dtype"])
+    
+
+def evaluar_y_registrar(nombre_modelo, modelo_grid, X_test, y_test):
+    ...
+    # Guarda el mejor modelo encontrado por GridSearchCV (best_estimator_)
+    mlflow.sklearn.log_model(modelo_grid.best_estimator_, "model", skops_trusted_types=["numpy.dtype"])
 
         print(f"\n--- {model_name} ---")
         print(f"Accuracy: {acc:.4f} | Precision: {prec:.4f} | Recall: {rec:.4f} | F1: {f1:.4f} | ROC-AUC: {auc:.4f}")
