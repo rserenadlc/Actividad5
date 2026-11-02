@@ -57,7 +57,7 @@ def evaluar_y_registrar(model_name, grid_search, X_test, y_test, experiment_name
         mlflow.log_artifact(plot_path, artifact_path="graficas")
         
         # Registrar Modelo
-        mlflow.sklearn.log_model(best_model, artifact_path="modelo")
+        mlflow.sklearn.log_model(pipe_lr, "model", skops_trusted_types=["numpy.dtype"])
 
         print(f"\n--- {model_name} ---")
         print(f"Accuracy: {acc:.4f} | Precision: {prec:.4f} | Recall: {rec:.4f} | F1: {f1:.4f} | ROC-AUC: {auc:.4f}")
