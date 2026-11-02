@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 import numpy as np
+from sklearn.pipeline import Pipeline
 
 import mlflow
 import mlflow.sklearn
